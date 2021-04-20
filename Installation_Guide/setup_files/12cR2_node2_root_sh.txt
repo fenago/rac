@@ -1,0 +1,108 @@
+# /u01/app/12.2.0.1/grid/root.sh
+Performing root user operation.
+
+The following environment variables are set as:
+    ORACLE_OWNER= oracle
+    ORACLE_HOME=  /u01/app/12.2.0.1/grid
+
+Enter the full pathname of the local bin directory: [/usr/local/bin]: 
+   Copying dbhome to /usr/local/bin ...
+   Copying oraenv to /usr/local/bin ...
+   Copying coraenv to /usr/local/bin ...
+
+
+Creating /etc/oratab file...
+Entries will be added to the /etc/oratab file as needed by
+Database Configuration Assistant when a database is created
+Finished running generic part of root script.
+Now product-specific root actions will be performed.
+Relinking oracle with rac_on option
+Using configuration parameter file: /u01/app/12.2.0.1/grid/crs/install/crsconfig_params
+The log of current session can be found at:
+  /u01/app/oracle/crsdata/ol7-122-rac2/crsconfig/rootcrs_ol7-122-rac2_2017-03-07_12-29-18AM.log
+2017/03/07 12:29:25 CLSRSC-594: Executing installation step 1 of 19: 'SetupTFA'.
+2017/03/07 12:29:25 CLSRSC-4001: Installing Oracle Trace File Analyzer (TFA) Collector.
+2017/03/07 12:30:26 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
+2017/03/07 12:30:26 CLSRSC-594: Executing installation step 2 of 19: 'ValidateEnv'.
+2017/03/07 12:30:31 CLSRSC-363: User ignored prerequisites during installation
+2017/03/07 12:30:31 CLSRSC-594: Executing installation step 3 of 19: 'CheckFirstNode'.
+2017/03/07 12:30:33 CLSRSC-594: Executing installation step 4 of 19: 'GenSiteGUIDs'.
+2017/03/07 12:30:33 CLSRSC-594: Executing installation step 5 of 19: 'SaveParamFile'.
+2017/03/07 12:30:36 CLSRSC-594: Executing installation step 6 of 19: 'SetupOSD'.
+2017/03/07 12:30:43 CLSRSC-594: Executing installation step 7 of 19: 'CheckCRSConfig'.
+2017/03/07 12:30:44 CLSRSC-594: Executing installation step 8 of 19: 'SetupLocalGPNP'.
+2017/03/07 12:30:46 CLSRSC-594: Executing installation step 9 of 19: 'ConfigOLR'.
+2017/03/07 12:30:49 CLSRSC-594: Executing installation step 10 of 19: 'ConfigCHMOS'.
+2017/03/07 12:30:49 CLSRSC-594: Executing installation step 11 of 19: 'CreateOHASD'.
+2017/03/07 12:30:51 CLSRSC-594: Executing installation step 12 of 19: 'ConfigOHASD'.
+2017/03/07 12:31:06 CLSRSC-330: Adding Clusterware entries to file 'oracle-ohasd.service'
+2017/03/07 12:31:38 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
+2017/03/07 12:31:39 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
+CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac2'
+CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac2' has completed
+CRS-4133: Oracle High Availability Services has been stopped.
+CRS-4123: Oracle High Availability Services has been started.
+2017/03/07 12:32:28 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
+2017/03/07 12:32:30 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
+CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac2'
+CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac2' has completed
+CRS-4133: Oracle High Availability Services has been stopped.
+CRS-4123: Oracle High Availability Services has been started.
+CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac2'
+CRS-2673: Attempting to stop 'ora.drivers.acfs' on 'ol7-122-rac2'
+CRS-2677: Stop of 'ora.drivers.acfs' on 'ol7-122-rac2' succeeded
+CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac2' has completed
+CRS-4133: Oracle High Availability Services has been stopped.
+2017/03/07 12:32:49 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
+CRS-4123: Starting Oracle High Availability Services-managed resources
+CRS-2672: Attempting to start 'ora.mdnsd' on 'ol7-122-rac2'
+CRS-2672: Attempting to start 'ora.evmd' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.mdnsd' on 'ol7-122-rac2' succeeded
+CRS-2676: Start of 'ora.evmd' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.gpnpd' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.gpnpd' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.gipcd' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.gipcd' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.cssdmonitor' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.cssdmonitor' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.cssd' on 'ol7-122-rac2'
+CRS-2672: Attempting to start 'ora.diskmon' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.diskmon' on 'ol7-122-rac2' succeeded
+CRS-2676: Start of 'ora.cssd' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.cluster_interconnect.haip' on 'ol7-122-rac2'
+CRS-2672: Attempting to start 'ora.ctssd' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.ctssd' on 'ol7-122-rac2' succeeded
+CRS-2676: Start of 'ora.cluster_interconnect.haip' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.asm' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.asm' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.storage' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.storage' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.crf' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.crf' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.crsd' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.crsd' on 'ol7-122-rac2' succeeded
+CRS-6017: Processing resource auto-start for servers: ol7-122-rac2
+CRS-2673: Attempting to stop 'ora.LISTENER_SCAN1.lsnr' on 'ol7-122-rac1'
+CRS-2672: Attempting to start 'ora.net1.network' on 'ol7-122-rac2'
+CRS-2672: Attempting to start 'ora.ASMNET1LSNR_ASM.lsnr' on 'ol7-122-rac2'
+CRS-2677: Stop of 'ora.LISTENER_SCAN1.lsnr' on 'ol7-122-rac1' succeeded
+CRS-2676: Start of 'ora.net1.network' on 'ol7-122-rac2' succeeded
+CRS-2673: Attempting to stop 'ora.scan1.vip' on 'ol7-122-rac1'
+CRS-2672: Attempting to start 'ora.ons' on 'ol7-122-rac2'
+CRS-2677: Stop of 'ora.scan1.vip' on 'ol7-122-rac1' succeeded
+CRS-2672: Attempting to start 'ora.scan1.vip' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.scan1.vip' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.LISTENER_SCAN1.lsnr' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.ASMNET1LSNR_ASM.lsnr' on 'ol7-122-rac2' succeeded
+CRS-2672: Attempting to start 'ora.asm' on 'ol7-122-rac2'
+CRS-2676: Start of 'ora.ons' on 'ol7-122-rac2' succeeded
+CRS-2676: Start of 'ora.LISTENER_SCAN1.lsnr' on 'ol7-122-rac2' succeeded
+CRS-2676: Start of 'ora.asm' on 'ol7-122-rac2' succeeded
+CRS-6016: Resource auto-start has completed for server ol7-122-rac2
+CRS-6024: Completed start of Oracle Cluster Ready Services-managed resources
+CRS-4123: Oracle High Availability Services has been started.
+2017/03/07 12:35:23 CLSRSC-343: Successfully started Oracle Clusterware stack
+2017/03/07 12:35:23 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
+2017/03/07 12:35:41 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
+2017/03/07 12:35:51 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
+#
