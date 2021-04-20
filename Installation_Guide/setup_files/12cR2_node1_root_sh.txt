@@ -20,30 +20,30 @@ Relinking oracle with rac_on option
 Using configuration parameter file: /u01/app/12.2.0.1/grid/crs/install/crsconfig_params
 The log of current session can be found at:
   /u01/app/oracle/crsdata/ol7-122-rac1/crsconfig/rootcrs_ol7-122-rac1_2017-03-07_12-05-37AM.log
-2017/03/07 12:05:57 CLSRSC-594: Executing installation step 1 of 19: 'SetupTFA'.
-2017/03/07 12:05:57 CLSRSC-4001: Installing Oracle Trace File Analyzer (TFA) Collector.
-2017/03/07 12:06:34 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
-2017/03/07 12:06:34 CLSRSC-594: Executing installation step 2 of 19: 'ValidateEnv'.
-2017/03/07 12:06:45 CLSRSC-363: User ignored prerequisites during installation
-2017/03/07 12:06:45 CLSRSC-594: Executing installation step 3 of 19: 'CheckFirstNode'.
-2017/03/07 12:06:47 CLSRSC-594: Executing installation step 4 of 19: 'GenSiteGUIDs'.
-2017/03/07 12:06:49 CLSRSC-594: Executing installation step 5 of 19: 'SaveParamFile'.
-2017/03/07 12:06:57 CLSRSC-594: Executing installation step 6 of 19: 'SetupOSD'.
-2017/03/07 12:07:01 CLSRSC-594: Executing installation step 7 of 19: 'CheckCRSConfig'.
-2017/03/07 12:07:02 CLSRSC-594: Executing installation step 8 of 19: 'SetupLocalGPNP'.
-2017/03/07 12:07:31 CLSRSC-594: Executing installation step 9 of 19: 'ConfigOLR'.
-2017/03/07 12:07:43 CLSRSC-594: Executing installation step 10 of 19: 'ConfigCHMOS'.
-2017/03/07 12:07:43 CLSRSC-594: Executing installation step 11 of 19: 'CreateOHASD'.
-2017/03/07 12:07:50 CLSRSC-594: Executing installation step 12 of 19: 'ConfigOHASD'.
-2017/03/07 12:08:05 CLSRSC-330: Adding Clusterware entries to file 'oracle-ohasd.service'
-2017/03/07 12:08:47 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
-2017/03/07 12:08:54 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
+2021/03/07 12:05:57 CLSRSC-594: Executing installation step 1 of 19: 'SetupTFA'.
+2021/03/07 12:05:57 CLSRSC-4001: Installing Oracle Trace File Analyzer (TFA) Collector.
+2021/03/07 12:06:34 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
+2021/03/07 12:06:34 CLSRSC-594: Executing installation step 2 of 19: 'ValidateEnv'.
+2021/03/07 12:06:45 CLSRSC-363: User ignored prerequisites during installation
+2021/03/07 12:06:45 CLSRSC-594: Executing installation step 3 of 19: 'CheckFirstNode'.
+2021/03/07 12:06:47 CLSRSC-594: Executing installation step 4 of 19: 'GenSiteGUIDs'.
+2021/03/07 12:06:49 CLSRSC-594: Executing installation step 5 of 19: 'SaveParamFile'.
+2021/03/07 12:06:57 CLSRSC-594: Executing installation step 6 of 19: 'SetupOSD'.
+2021/03/07 12:07:01 CLSRSC-594: Executing installation step 7 of 19: 'CheckCRSConfig'.
+2021/03/07 12:07:02 CLSRSC-594: Executing installation step 8 of 19: 'SetupLocalGPNP'.
+2021/03/07 12:07:31 CLSRSC-594: Executing installation step 9 of 19: 'ConfigOLR'.
+2021/03/07 12:07:43 CLSRSC-594: Executing installation step 10 of 19: 'ConfigCHMOS'.
+2021/03/07 12:07:43 CLSRSC-594: Executing installation step 11 of 19: 'CreateOHASD'.
+2021/03/07 12:07:50 CLSRSC-594: Executing installation step 12 of 19: 'ConfigOHASD'.
+2021/03/07 12:08:05 CLSRSC-330: Adding Clusterware entries to file 'oracle-ohasd.service'
+2021/03/07 12:08:47 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
+2021/03/07 12:08:54 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
 CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac1'
 CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac1' has completed
 CRS-4133: Oracle High Availability Services has been stopped.
 CRS-4123: Oracle High Availability Services has been started.
-2017/03/07 12:09:49 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
-2017/03/07 12:09:56 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
+2021/03/07 12:09:49 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
+2021/03/07 12:09:56 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
 CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac1'
 CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac1' has completed
 CRS-4133: Oracle High Availability Services has been stopped.
@@ -66,7 +66,7 @@ CRS-2676: Start of 'ora.cssd' on 'ol7-122-rac1' succeeded
 Disk groups created successfully. Check /u01/app/oracle/cfgtoollogs/asmca/asmca-170307PM121039.log for details.
 
 
-2017/03/07 12:11:56 CLSRSC-482: Running command: '/u01/app/12.2.0.1/grid/bin/ocrconfig -upgrade oracle oinstall'
+2021/03/07 12:11:56 CLSRSC-482: Running command: '/u01/app/12.2.0.1/grid/bin/ocrconfig -upgrade oracle oinstall'
 CRS-2672: Attempting to start 'ora.crf' on 'ol7-122-rac1'
 CRS-2672: Attempting to start 'ora.storage' on 'ol7-122-rac1'
 CRS-2676: Start of 'ora.storage' on 'ol7-122-rac1' succeeded
@@ -109,7 +109,7 @@ CRS-2673: Attempting to stop 'ora.gipcd' on 'ol7-122-rac1'
 CRS-2677: Stop of 'ora.gipcd' on 'ol7-122-rac1' succeeded
 CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'ol7-122-rac1' has completed
 CRS-4133: Oracle High Availability Services has been stopped.
-2017/03/07 12:13:25 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
+2021/03/07 12:13:25 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
 CRS-4123: Starting Oracle High Availability Services-managed resources
 CRS-2672: Attempting to start 'ora.mdnsd' on 'ol7-122-rac1'
 CRS-2672: Attempting to start 'ora.evmd' on 'ol7-122-rac1'
@@ -142,14 +142,14 @@ CRS-6017: Processing resource auto-start for servers: ol7-122-rac1
 CRS-6016: Resource auto-start has completed for server ol7-122-rac1
 CRS-6024: Completed start of Oracle Cluster Ready Services-managed resources
 CRS-4123: Oracle High Availability Services has been started.
-2017/03/07 12:15:08 CLSRSC-343: Successfully started Oracle Clusterware stack
-2017/03/07 12:15:08 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
+2021/03/07 12:15:08 CLSRSC-343: Successfully started Oracle Clusterware stack
+2021/03/07 12:15:08 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
 CRS-2672: Attempting to start 'ora.ASMNET1LSNR_ASM.lsnr' on 'ol7-122-rac1'
 CRS-2676: Start of 'ora.ASMNET1LSNR_ASM.lsnr' on 'ol7-122-rac1' succeeded
 CRS-2672: Attempting to start 'ora.asm' on 'ol7-122-rac1'
 CRS-2676: Start of 'ora.asm' on 'ol7-122-rac1' succeeded
 CRS-2672: Attempting to start 'ora.DATA.dg' on 'ol7-122-rac1'
 CRS-2676: Start of 'ora.DATA.dg' on 'ol7-122-rac1' succeeded
-2017/03/07 12:23:02 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
-2017/03/07 12:26:10 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
+2021/03/07 12:23:02 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
+2021/03/07 12:26:10 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
 #

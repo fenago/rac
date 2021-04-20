@@ -1137,14 +1137,19 @@ are using UDEV, so this is not necessary.
     exit
 
 
-### Note
+#### Note
+
+Run following command as the "root" user: `xhost +`
+
+
+These are complete steps required to get X11 working.
+
+```
 yum install xorg-x11-xauth
 ps -ef | grep -i Xorg ( to get display var)
 export DISPLAY=:0 // or add it /root/.bash_profile and /home/oracle/.bash_profile
 xhost +
-Run following command as the "root" user.
-
-`xhost +`
+```
 
 
 Configure the Grid Infrastructure by running the following as the "oracle" user.
@@ -1311,8 +1316,8 @@ that listed below.
 
 The output of the "root.sh" will vary a little depending on the node it
 is run on. Example output can be seen here
-([Node1](https://github.com/fenago/rac/blob/main/md/12cR2_node1_root_sh.txt),
-[Node2](https://github.com/fenago/rac/blob/main/md/ol7-122-rac/12cR2_node2_root_sh.txt)).
+([Node1](https://github.com/fenago/rac/blob/main/Installation_Guide/setup_files/12cR2_node1_root_sh.txt),
+ [Node2](https://github.com/fenago/rac/blob/main/Installation_Guide/setup_files/12cR2_node2_root_sh.txt)).
 
 
 <span style="color:red;">Note: It can take upto 20 minutes to complete **root.sh** script on Node1.</span>
