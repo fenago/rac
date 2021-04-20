@@ -1,3 +1,5 @@
+<img align="right" src="./images/logo.png">
+
 
 Oracle Linux 7 (OL7) Installation
 =================================

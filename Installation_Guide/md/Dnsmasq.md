@@ -1,3 +1,4 @@
+<img align="right" src="./images/logo.png">
 
 
 Dnsmasq : For Simple DNS Configurations

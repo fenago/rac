@@ -1,4 +1,4 @@
-
+<img align="right" src="./images/logo.png">
 
 Clean Up a Failed Grid Infrastruture Installation
 =================================================

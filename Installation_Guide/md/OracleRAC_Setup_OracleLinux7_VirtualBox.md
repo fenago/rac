@@ -1,3 +1,5 @@
+<img align="right" src="./images/logo.png">
+
 
 Oracle Database 12c Release 2 (12.2) RAC On Oracle Linux 7 Using VirtualBox
 ===========================================================================
@@ -10,7 +12,7 @@ This labs covers the installation of Oracle Database 12c Release 2
 -   VirtualBox Installation
 -   VirtualBox Network Setup
 -   Virtual Machine Setup
--   Guest Operating System Installation]
+-   Guest Operating System Installation
 -   Oracle Installation Prerequisites
     -   Automatic Setup
     -   Manual Setup
@@ -1086,8 +1088,10 @@ are using UDEV, so this is not necessary.
 
     exit
 
-Configure the Grid Infrastructure by running the following as the
-"oracle" user.
+Configure the Grid Infrastructure by running the following as the "oracle" user.
+
+`su - oracle`
+
 
 We could have run the configuration in silent mode using this edited
 response file `grid\_config.rsp` with the following command.
