@@ -4,7 +4,7 @@
 Oracle Database 12c Release 2 (12.2) RAC On Oracle Linux 7 Using VirtualBox
 ===========================================================================
 
-This labs covers the installation of Oracle Database 12c Release 2
+This lab covers the installation of Oracle Database 12c Release 2
 (12.2 64-bit) RAC on Linux (Oracle Linux 7 64-bit) using VirtualBox with no additional shared disk devices.
 
 -   Introduction
