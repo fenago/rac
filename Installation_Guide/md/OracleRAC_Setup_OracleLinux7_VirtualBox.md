@@ -436,11 +436,11 @@ blank, but I prefer to put the addresses in for reference.
     192.168.56.103   ol7-122-rac1-vip.localdomain    ol7-122-rac1-vip
     192.168.56.104   ol7-122-rac2-vip.localdomain    ol7-122-rac2-vip
     # SCAN
-    #192.168.56.105   ol7-122-scan.localdomain ol7-122-scan
-    #192.168.56.106   ol7-122-scan.localdomain ol7-122-scan
-    #192.168.56.107   ol7-122-scan.localdomain ol7-122-scan
+    192.168.56.105   ol7-122-scan.localdomain ol7-122-scan
+    192.168.56.106   ol7-122-scan.localdomain ol7-122-scan
+    192.168.56.107   ol7-122-scan.localdomain ol7-122-scan
 
-** The SCAN address is commented out of the hosts file because it must
+** The SCAN address is uncommented in the hosts file but it must
 be resolved using a DNS, so it can round-robin between 3 addresses on
 the same subnet as the public IPs. The DNS can be configured on the host
 machine using `BIND` or `Dnsmasq`,
@@ -448,13 +448,51 @@ which is much simpler. Steps are mentioned in `Dnsmasq.pdf`. If you are using Dn
 entries in the hosts machines "/etc/hosts" file, with the SCAN entries
 uncommented, and restart Dnsmasq.
 
+1. Install the dnsmasq and configured it for next reboot
+
+    yum install dnsmasq
+    chkconfig dnsmasq on
+
+2. Create the new file having entry of SCAN ip address
+
+cat /etc/racdns
+    # SCAN
+    192.168.56.105   ol7-122-scan.localdomain ol7-122-scan
+    192.168.56.106   ol7-122-scan.localdomain ol7-122-scan
+    192.168.56.107   ol7-122-scan.localdomain ol7-122-scan
+
+3. Modify one parameter addn-hosts in default configuration file ‘/etc/dnsmasq.conf’.
+
+cat /etc/dnsmasq.conf | grep addn-hosts
+addn-hosts=/etc/racdns
+
+4. Configure resolv.conf file as above steps:
+
+cat /etc/resolv.conf
+#domain localdomain
+nameserver 127.0.0.1
+search localdomain
+nameserver 192.168.56.1
+
+5. Protect file from overwritten by host reboot
+
+[root@rac1 ~]# chattr +i /etc/resolv.conf
+if you need to edit the file then use this but don't forget to make it read only again with +i if you change it:
+[root@rac1 ~]# chattr -i /etc/resolv.conf
+
+6. Start the Service of dnsmasq and check nslookup command
+
+service dnsmasq restart
+nslookup ol7-122-scan
+
 Make sure the "/etc/resolv.conf" file includes a nameserver entry that
 points to the correct nameserver. Also, if the "domain" and "search"
 entries are both present, comment out one of them. For this installation
-my "/etc/resolv.conf" looked like this.
+my "/etc/resolv.conf" looked like this.  The order of the nameservers is important!
 
     #domain localdomain
     search localdomain
+    nameserver 127.0.0.1
     nameserver 192.168.56.1
 
 The changes to the "resolv.conf" will be overwritten by the network
@@ -468,7 +506,7 @@ following change. This will take effect after the next restart.
 
 There is no need to do the restart now. You can just run the following
 command. Remember to amend the adapter name if yours are named
-differently.
+differently.  (you can also disable/enable the NIC from the GUI)
 
     # ifdown enp0s3
     # #ifdown eth0
@@ -526,8 +564,8 @@ With this in place and the DNS configured the SCAN address is being
 resolved to all three IP addresses.
 
     # nslookup ol7-122-scan
-    Server:     192.168.56.1
-    Address:    192.168.56.1#53
+    Server:     127.0.0.1
+    Address:    127.0.0.1#53
 
     Name:   ol7-122-scan.localdomain
     Address: 192.168.56.105
@@ -1090,7 +1128,10 @@ are using UDEV, so this is not necessary.
 
 
 ### Note
-
+yum install xorg-x11-xauth
+ps -ef | grep -i Xorg ( to get display var)
+export DISPLAY=:0 // or add it /root/.bash_profile and /home/oracle/.bash_profile
+xhost +
 Run following command as the "root" user.
 
 `xhost +`
@@ -1107,12 +1148,12 @@ Configure the Grid Infrastructure by running the following as the "oracle" user.
 
 
 We could have run the configuration in silent mode using this edited
-response file `grid\_config.rsp` with the following command.
+response file `grid\_config.rsp` with the following command. (DON'T DO THIS)
 
     cd /u01/app/12.2.0.1/grid
     ./gridSetup.sh -silent -responseFile /tmp/grid_config.rsp
 
-Instead, here's the interactive configuration.
+Instead, here's the interactive configuration. (DO THIS)
 
     cd /u01/app/12.2.0.1/grid
     ./gridSetup.sh
