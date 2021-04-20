@@ -1088,9 +1088,22 @@ are using UDEV, so this is not necessary.
 
     exit
 
+
+### Note
+
+Run following command as the "root" user.
+
+`xhost +`
+
+
 Configure the Grid Infrastructure by running the following as the "oracle" user.
 
 `su - oracle`
+
+
+<span style="color:red;">Note: Make sure to turn off enp0s3 and Connect enp0s8 and enp0s9 on both machines before proceeding:</span>
+
+![](./images/network.png)
 
 
 We could have run the configuration in silent mode using this edited
@@ -1364,12 +1377,24 @@ started, then login to "ol7-122-rac1" as the oracle user and start the
 Oracle installer. Check that all services are up using "crsctl stat res
 -t", as described before.
 
-We could have run the OUI in silent mode using this edited response file db\_install.rsp with the following command.
+#### Oracle 12c Database
+
+First, unzip the `linuxx64_12201_database.zip` file into database folder in the same folder.
+
+![](./images/unzip0.png)
+
+![](./images/unzip.png)
+
+
+We could have run the OUI in silent mode using this edited response file db\_install.rsp with the following command (For Information Only) 
 
 
     $ db_env
     $ cd /media/sf_database-setup/database
     $ ./runInstaller -silent -ignoreSysPrereqs -showProgress -responseFile /tmp/db_install.rsp
+
+
+
 
 Instead, here's the interactive view.
 
