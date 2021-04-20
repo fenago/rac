@@ -154,7 +154,7 @@ click the "Next" button.
 ![New VM Wizard - Name and Operating
 System](./images/03-NVMW-name-and-operating-system.jpg)
 
-Enter "4096" as the base memory size, then click the "Next" button. Use
+Enter "12288" as the base memory size, then click the "Next" button. Use
 more memory if you have enough physical memory on your machine as it
 will make the process much quicker!
 
@@ -214,6 +214,16 @@ option, then click the "OK" button.
 
 ![VirtualBox - System
 Settings](./images/13-VB-system-settings.jpg)
+
+
+Click "Processor" and change count to **3**, then click the "OK" button.
+
+![](./images/processor.png)
+
+Click "Display" on left menu and change Video Memory to **128 MB**. Also, change `Graphics Controller` to 'VMSVGA', then click the "OK" button.
+
+![](./images/video.png)
+
 
 The virtual machine is now configured so we can start the guest
 operating system installation.
