@@ -44,23 +44,19 @@ consider.
     (Clusterware + ASM) and two Database instances all on a single
     server. As you can imagine, this requires a significant amount of
     disk space, CPU and memory.
--   Following on from the last point, the VMs will each need at least 4G
+-   Following on from the last point, the VMs will each need at least 8G
     of RAM, preferably more if you don't want the VMs to swap like
-    crazy. Don't assume you will be able to run this on a small PC or
-    laptop. You won't.
+    crazy. 
 -   This procedure provides a bare bones installation to get the RAC
     working. There is no redundancy in the Grid Infrastructure
     installation or the ASM installation. To add this, simply create
     double the amount of shared disks and select the "Normal" redundancy
     option when it is offered. Of course, this will take more disk
     space.
--   During the virtual disk creation, I always choose not to preallocate
+-   During the virtual disk creation, We can choose not to preallocate
     the disk space. This makes virtual disk access slower during the
     installation, but saves on wasted disk space. The shared disks must
     have their space preallocated.
--   This is not, and should not be considered, a production-ready
-    system. It's simply to allow you to get used to installing and using
-    RAC.
 -   The Single Client Access Name (SCAN) should be defined in the DNS or
     GNS and round-robin between one of 3 addresses, which are on the
     same subnet as the public and virtual IPs. Prior to 11.2.0.2 it
@@ -71,11 +67,8 @@ consider.
 -   The virtual machines can be limited to 2Gig of swap, which causes a
     prerequisite check failure, but doesn't prevent the installation
     working. If you want to avoid this, define 3+Gig of swap.
--   This article uses the 64-bit versions of Oracle Linux and Oracle 12c
-    Release 2.
--   When doing this installation on my server, I split the virtual disks
-    on to different physical disks ("/u02", "/u03", "/u04"). This is not
-    necessary, but makes things run a bit faster.
+-   This article uses the 64-bit versions of Oracle Linux and Oracle 12c Release 2.
+
 
 This procedure should run successfully on a Linux and Windows host.
 Where applicable, I've included both the Linux and Windows commands to
@@ -244,8 +237,7 @@ The resulting console window will contain the Oracle Linux boot screen.
 Boot](./images/15-oracle-linux-boot.jpg)
 
 Continue through the Oracle Linux 7 installation as you would for a
-basic server. A general pictorial guide to the installation can be found
-[here](https://oracle-base.com/articles/linux/oracle-linux-7-installation).
+basic server. A general pictorial guide to the installation `oracle7_installation.pdf`.
 More specifically, it should be a server installation with a minimum of
 4G+ swap, firewall disabled, SELinux set to permissive and the following
 package groups installed:
@@ -1207,8 +1199,7 @@ Accept the default inventory directory by clicking the "Next" button.
 ![Grid - Create
 Inventory](./images/34-Grid-CreateInventory.jpg)
 
-If you want the root scripts to run automatically, enter the relevant
-credentials. I prefer to run them manually. Click the "Next" button.
+Run the root scripts manually. Click the "Next" button.
 
 ![Grid - Root Script Execution
 Configuration](./images/35-Grid-RootScriptExecutionConfiguration.jpg)
@@ -1255,6 +1246,10 @@ is run on. Example output can be seen here
 ([Node1](https://github.com/fenago/rac/blob/main/md/12cR2_node1_root_sh.txt),
 [Node2](https://github.com/fenago/rac/blob/main/md/ol7-122-rac/12cR2_node2_root_sh.txt)).
 
+
+<span style="color:red;">Note: It can take upto 20 minutes to complete **root.sh** script on Node1.</span>
+
+
 Once the scripts have completed, return to the "Execute Configuration
 Scripts" screen on "ol7-122-rac1" and click the "OK" button.
 
@@ -1279,6 +1274,9 @@ Click the "Close" button to exit the installer.
 
 ![Grid -
 Finish](./images/41-Grid-Finish.jpg)
+
+<span style="color:red;">Note: It can take upto 120-150 minutes to complete grid infrastructure installation.</span>
+
 
 The grid infrastructure installation is now complete. We can check the
 status of the installation using the following commands.
@@ -1445,6 +1443,10 @@ Click the "Close" button to exit the installer.
 ![DB -
 Finish](./images/61-DB-Finish.jpg)
 
+
+<span style="color:red;">Note: It can take upto 60-75 minutes to complete database software installation.</span>
+
+
 Shutdown both VMs and take snapshots. Remember to make a fresh zip of
 the ASM disks on the host machine, which you will need to restore if you
 revert to the post-db snapshots.
@@ -1503,6 +1505,9 @@ When finished, click the "Close" button.
 
 ![DBCA -
 Finish](./images/75-DBCA-Finish.jpg)
+
+<span style="color:red;">Note: It can take upto 40-50 minutes to complete database creation.</span>
+
 
 The RAC database creation is now complete.
 
