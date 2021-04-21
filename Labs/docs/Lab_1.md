@@ -24,6 +24,7 @@ Note: You can skip the following start & stop commands if you already done it in
     $GRID_HOME/bin/crsctl enable crs
 
 **3. Find the cluster name**
+
     $GRID_HOME/bin/cemutlo -n
 
     or 
@@ -141,7 +142,7 @@ export ORACLE_HOSTNAME=ol7-122-rac2.localdomain
 
      ocrconfig -showbackup
 
-**16 . Check whether standard or flex ASM
+**16 . Check whether standard or flex ASM**
 
     crsctl get cluster mode status
 
