@@ -17,6 +17,8 @@ Note: You can skip the following start & stop commands if you already done it in
 
     $GRID_HOME/bin/crsctl start crs
 
+### Protip: Use -wait flag to wait until startup is complete and get all progress.
+
 **2. Enable/Disable auto restart of CRS.**
 
     $GRID_HOME/bin/crsctl disable crs
