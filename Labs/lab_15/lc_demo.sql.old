@@ -1,0 +1,12 @@
+create or replace procedure lcdemo is
+jg number:= 1;
+  begin
+   for i in 1 ..100000 loop
+   dbms_lock.sleep (1);
+   for j in 1 ..100000
+   jg:= jg + 0;
+ end loop;
+ end loop;
+end;
+/
+
