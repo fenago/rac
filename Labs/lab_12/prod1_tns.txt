@@ -1,4 +1,4 @@
 
 prod1 = (DESCRIPTION = 
-  (ADDRESS = (PROTOCOL = TCP)(HOST = cluster01-scan.cluster01.example.com)(PORT = 1521))
+  (ADDRESS = (PROTOCOL = TCP)(HOST = ol7-122-rac1)(PORT = 1521))
     (LOAD_BALANCE = YES) (CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = prod1)))
